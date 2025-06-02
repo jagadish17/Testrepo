@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Extension",
+      "type": "shell",
+      "command": "echo 'No build step required for this extension.'",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

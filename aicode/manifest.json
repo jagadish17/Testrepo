@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "DOM Action Recorder for Grak AI",
+  "version": "0.1.0",
+  "description": "Records DOM/user actions, sends them to Grak AI, and generates Playwright TS code.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "action": {"default_popup": "popup.html"},
+  "options_page": "options.html"
+}

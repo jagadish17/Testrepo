@@ -1,0 +1,16 @@
+{
+  "name": "aicode",
+  "version": "1.0.0",
+  "description": "This extension records DOM/user actions, sends them to Grak AI, and generates Playwright TypeScript code.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

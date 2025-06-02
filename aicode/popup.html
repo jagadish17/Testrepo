@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Action Recorder</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #232526; color: #fff; margin: 0; padding: 0; }
+    .panel { width: 400px; padding: 0 0 16px 0; background: #232526; border-radius: 8px; box-shadow: 0 2px 16px #0008; }
+    .header { padding: 18px 24px; font-size: 1.3em; font-weight: 600; background: #181a1b; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: space-between; }
+    .status { font-size: 0.95em; margin-left: 8px; }
+    .actions { padding: 12px 24px; max-height: 120px; overflow-y: auto; background: #232526; border-bottom: 1px solid #333; }
+    .action-item { margin-bottom: 6px; font-size: 0.98em; color: #b5e0ff; }
+    .code-block { background: #181a1b; color: #b5e0ff; border-radius: 4px; padding: 12px; font-family: 'Fira Mono', 'Consolas', monospace; font-size: 0.97em; margin: 12px 24px 0 24px; white-space: pre; }
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; }
+    .btn { background: #00c6ff; color: #fff; border: none; border-radius: 4px; padding: 8px 18px; font-size: 1em; cursor: pointer; font-weight: 500; margin-left: 8px; }
+    .btn:hover { background: #0072ff; }
+    .input-path { background: #181a1b; color: #b5e0ff; border: 1px solid #333; border-radius: 4px; padding: 6px 10px; font-size: 1em; width: 60%; margin-right: 8px; }
+    .confirm-bar { background: #232526; padding: 10px 24px; border-top: 1px solid #333; display: flex; justify-content: flex-end; }
+    .confirm-btn { margin-left: 8px; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <span>Grak AI DOM Recorder</span>
+      <span class="status" id="server-status">Server: <span id="server-status-value">Checking...</span></span>
+    </div>
+    <div class="actions" id="action-list">No actions yet.</div>
+    <div class="code-block" id="output">No code yet.</div>
+    <div class="footer">
+      <input class="input-path" id="file-path" placeholder="/path/in/workspace.ts" />
+      <button class="btn" id="start-btn">Start</button>
+      <button class="btn" id="stop-btn">Stop</button>
+      <button class="btn" id="insert-btn">Insert to VS Code</button>
+      <button class="btn" id="copy">Copy Code</button>
+    </div>
+    <div class="confirm-bar" id="confirm-bar" style="display:none;">
+      <span>Insert code at <span id="confirm-path"></span>?</span>
+      <button class="btn confirm-btn" id="keep-btn">Keep</button>
+      <button class="btn confirm-btn" id="discard-btn">Discard</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
